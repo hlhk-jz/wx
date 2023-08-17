@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <router-view/>
-    <router-link :to="{name:'HelloWorld'}">用户1</router-link>
-    <router-link :to="{name:'wd'}">用户2</router-link>
+    <router-link :to="{name:'HelloWorld'}">测试</router-link>
+    <router-link :to="{name:'Cj'}">cj</router-link>
+    <router-link :to="{name:'Zj'}">zj</router-link>
+    <router-link :to="{name:'Gj'}">gj</router-link>
   </div>
 </template>
 
