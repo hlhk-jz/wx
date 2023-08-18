@@ -55,11 +55,16 @@
       </div>
     </div>
 
-    <div style="margin-top: 10px;">
-      <div style="width: 100px; margin-left: 350px">
-        <input type="button" @click="show" style="width: 50px;height: 30px;" value="按钮"></input>
-      </div>
+    <div style="width: 300px;height: 50px;float: left;">
+          <p>备注：</p>
     </div>
+    <div style="width: 100px;height: 50px;float: right;">
+      <input type="button" @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+    </div>
+    <div style="width: 50px;height: 50px;float: right;">
+      <input type="button" @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
+    </div>
+
   </div>
 </template>
 
