@@ -59,7 +59,7 @@
           <p>备注：</p>
     </div>
     <div style="width: 100px;height: 50px;float: right;">
-      <input type="button" @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+      <input type="button" @click="stop" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
     </div>
     <div style="width: 50px;height: 50px;float: right;">
       <input type="button" @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
@@ -74,9 +74,12 @@
     data () {
       return {
         num: 0,
+        id: null,
+        testNum: 0
       }
     },
     methods:{
+      //随机数方法
       rand(m,n){
         return Math.ceil(Math.random() * (n-m+1) + m-1)
       },
@@ -86,31 +89,73 @@
         const san_div = document.getElementById('san_id');
         const er_div = document.getElementById('er_id');
 
+        //将边框都重置白色
         wu_div.style.border="1px solid #e5e6d8"
         si_div.style.border="1px solid #e5e6d8"
         san_div.style.border="1px solid #e5e6d8"
         er_div.style.border="1px solid #e5e6d8"
 
-        this.num=this.rand(1,4);
-        if(this.num - 1=== 0){
+        //判断设置边框颜色
+        this.num=this.rand(2,5);
+        if(this.num - 2=== 0){
           er_div.style.border="1px solid #e8fa21"
         }
-        if(this.num - 2=== 0){
+        if(this.num - 3=== 0){
           san_div.style.border="1px solid #e8fa21"
         }
-        if(this.num - 3=== 0){
+        if(this.num - 4=== 0){
           si_div.style.border="1px solid #e8fa21"
         }
-        if(this.num - 4=== 0){
+        if(this.num - 5=== 0){
           wu_div.style.border="1px solid #e8fa21"
         }
 
       },
+      //开启定时
       show(){
-        setInterval(() => {
+        this.id = setInterval(() => {
           this.yanShi()
         }, 500)
+        //调用后端获取数据
+        this.$axios.get('http://localhost:9001/wuxing/test').
+        then(response => (
+          this.testNum = response.data
+        )).catch(error => (
+          console.log(error)
+        ))
+        setTimeout(this.stop, 4000 )
       },
+      //停止定时
+      stop(){
+        console.log(this.testNum)
+        clearInterval(this.id)
+
+        const wu_div = document.getElementById('wu_id');
+        const si_div = document.getElementById('si_id');
+        const san_div = document.getElementById('san_id');
+        const er_div = document.getElementById('er_id');
+
+        //将边框都重置白色
+        wu_div.style.border="1px solid #e5e6d8"
+        si_div.style.border="1px solid #e5e6d8"
+        san_div.style.border="1px solid #e5e6d8"
+        er_div.style.border="1px solid #e5e6d8"
+
+        //设置底色
+        if(this.testNum - 2=== 0){
+          er_div.style.border="1px solid #e8fa21"
+        }
+        if(this.testNum - 3=== 0){
+          san_div.style.border="1px solid #e8fa21"
+        }
+        if(this.testNum - 4=== 0){
+          si_div.style.border="1px solid #e8fa21"
+        }
+        if(this.testNum - 5=== 0){
+          wu_div.style.border="1px solid #e8fa21"
+        }
+      }
+
     },
   }
 
