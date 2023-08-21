@@ -62,7 +62,7 @@
       <input type="button" @click="stop" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
     </div>
     <div style="width: 50px;height: 50px;float: right;">
-      <input type="button" @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
+      <input id="an" type="button"  @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
     </div>
 
   </div>
@@ -113,6 +113,7 @@
       },
       //开启定时
       show(){
+        document.getElementById('an').disabled="true";
         this.id = setInterval(() => {
           this.yanShi()
         }, 500)
@@ -141,7 +142,7 @@
         san_div.style.border="1px solid #e5e6d8"
         er_div.style.border="1px solid #e5e6d8"
 
-        //设置底色
+        //设置选中后的值底色
         if(this.testNum - 2=== 0){
           er_div.style.border="1px solid #e8fa21"
         }
@@ -154,6 +155,8 @@
         if(this.testNum - 5=== 0){
           wu_div.style.border="1px solid #e8fa21"
         }
+        //设置按钮取消置灰
+        document.getElementById('an').removeAttribute("disabled");
       }
 
     },
