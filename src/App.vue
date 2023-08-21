@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="app1">
-      <router-link :to="{name:'HelloWorld'}"  style="float:left;" >测</router-link>
+      <router-link :to="{name:'Login'}"  style="float:left;" >首页</router-link>
       <router-link :to="{name:'Cj'}" style="float:left; margin-left: 10px;">测试</router-link>
       <router-link :to="{name:'Zj'}"style="float:left; margin-left: 10px;">测试</router-link>
       <router-link :to="{name:'Gj'}"style="float:left; margin-left: 10px;">测试</router-link>

@@ -118,8 +118,7 @@
           this.yanShi()
         }, 500)
         //调用后端获取数据
-        this.$axios.get('http://localhost:9001/wuxing/test').
-        then(response => (
+        this.$axios.get('http://localhost:9001/wuxing/test').then(response => (
           this.testNum = response.data
         )).catch(error => (
           console.log(error)
