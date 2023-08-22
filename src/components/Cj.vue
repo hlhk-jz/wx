@@ -62,7 +62,7 @@
       <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
     </div>
     <div style="width: 50px;height: 50px;float: right;">
-      <input id="an" type="button"  @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
+      <input id="an" type="button"  @click="startApp" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
     </div>
 
   </div>
@@ -132,9 +132,13 @@
         }
 
       },
+
       //开启定时
-      show(){
+      startApp(){
+        let num = Number(this.count);
+        this.count = num - 2000000;
         document.getElementById('an').disabled="true";
+        //设置500毫秒调用一次，一直循环
         this.id = setInterval(() => {
           this.yanShi()
         }, 500)
@@ -146,9 +150,9 @@
         ))
         setTimeout(this.stop, 4000 )
       },
-      //停止定时
+
+      //停止定时,设置选中后的颜色
       stop(){
-        console.log(this.testNum)
         clearInterval(this.id)
 
         const wu_div = document.getElementById('wu_id');
@@ -162,7 +166,7 @@
         san_div.style.border="1px solid #e5e6d8"
         er_div.style.border="1px solid #e5e6d8"
 
-        //设置选中后的值底色
+        //设置选中后的值底色，并设置数据
         if(this.testNum - 2=== 0){
           er_div.style.border="1px solid #e8fa21"
         }
