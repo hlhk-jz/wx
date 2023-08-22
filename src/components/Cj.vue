@@ -56,10 +56,10 @@
     </div>
 
     <div style="width: 300px;height: 50px;float: left;">
-          <p>备注：</p>
+          <p>备注：{{ count }} </p>
     </div>
     <div style="width: 100px;height: 50px;float: right;">
-      <input type="button" @click="stop" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+      <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
     </div>
     <div style="width: 50px;height: 50px;float: right;">
       <input id="an" type="button"  @click="show" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
@@ -75,10 +75,31 @@
       return {
         num: 0,
         id: null,
-        testNum: 0
+        testNum: 0,
+        count: 0
       }
     },
+    created(){
+      this.queryCount();
+    },
     methods:{
+      queryCount(){
+        const userName = localStorage.getItem("token_wx");
+        //初始化页面查询数据
+        this.$axios.post('http://localhost:9001/wuxing/count',{"userName":userName}).then(response => (
+          this.count = response.data
+        )).catch(error => (
+          console.log(error)
+        ))
+      },
+      obtain(){
+        const userName = localStorage.getItem("token_wx");
+        this.$axios.post('http://localhost:9001/wuxing/obtain',{"userName":userName}).then(response => (
+          this.queryCount()
+        )).catch(error => (
+          console.log(error)
+        ))
+      },
       //随机数方法
       rand(m,n){
         return Math.ceil(Math.random() * (n-m+1) + m-1)
