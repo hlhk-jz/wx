@@ -2,8 +2,8 @@
 function setLocal(token){
   localStorage.setItem("token_wx",token)
 }
-function getLocal(token){
-  return localStorage.getItem(token)
+function getLocal(){
+  return localStorage.getItem("token_wx")
 }
 function getAllLocal () {
   return localStorage.valueOf();//取出所有的值
