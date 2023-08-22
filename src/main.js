@@ -16,13 +16,11 @@ Vue.prototype.$api = common
 router.beforeEach((to, from, next) => {
   //当没有token时并且访问不是首页的时候，跳转首页
   if(!localStorage.getItem('token_wx') && to.name != "Login"){
-    console.log("没有token!!!!name:"+to.name)
     next({
       replace:true,
       name:'Login'
     });
   }else{
-    console.log("有token~~~name："+to.name+",====path："+to.path)
     next();
   }
 })

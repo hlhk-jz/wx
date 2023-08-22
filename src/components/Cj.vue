@@ -2,67 +2,113 @@
   <div class="cj">
 
       <div class="bt">
-         <div style="width: 165px;float:left; margin-top: 5px" >标题1</div>
-         <div style="width: 165px;float:left; margin-top: 5px" >标题1</div>
-         <div style="width: 165px;float:left; margin-top: 5px" >标题1</div>
+         <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
+         <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
+         <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
       </div>
 
     <div class="wu" id="wu_id">
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题5</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题5</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题5</div>
+      </div>
+      <div id="wu_id_cs" style="width: 40px;float:left;display: none">
+        <div style="margin-top: 15px;">
+          <a style="color: azure" href="#" @click="transmit">标题</a>
+        </div>
       </div>
     </div>
 
     <div class="si" id="si_id">
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题4</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题4</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题4</div>
+      </div>
+      <div id="si_id_cs" style="width: 40px;float:left;display: none">
+        <div style="margin-top: 15px;">
+          <a style="color: azure" href="#" @click="transmit">标题</a>
+        </div>
       </div>
     </div>
 
     <div class="san" id="san_id">
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题3</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题3</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题3</div>
+      </div>
+      <div  id="san_id_cs" style="width: 40px;float:left;display: none">
+        <div style="margin-top: 15px;">
+          <a style="color: azure" href="#" @click="transmit">标题</a>
+        </div>
       </div>
     </div>
 
     <div class="er" id="er_id">
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题2</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题2</div>
       </div>
-      <div style="width: 165px;float:left;">
-        <div style="margin-top: 15px;">标题1</div>
+      <div style="width: 152px;float:left;">
+        <div style="margin-top: 15px;">标题2</div>
+      </div>
+      <div id="er_id_cs" style="width: 40px;float:left;display: none">
+        <div style="margin-top: 15px;">
+          <a style="color: azure" href="#" @click="transmit">标题</a>
+        </div>
       </div>
     </div>
 
-    <div style="width: 300px;height: 50px;float: left;">
-          <p>备注：{{ count }} </p>
+    <div id="zon" style="height: 50px">
+      <div style="width: 250px;height: 50px;float: left;">
+        <p>备注：{{ count }} </p>
+      </div>
+      <div style="width: 155px;height: 50px;float: left;">
+        <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+      </div>
+      <div style="width: 50px;height: 50px;float: left;">
+        <input id="an" type="button"  @click="startApp" style="width: 50px;height: 30px;margin-top: 10px" value="开始"></input>
+      </div>
     </div>
-    <div style="width: 100px;height: 50px;float: right;">
-      <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
-    </div>
-    <div style="width: 50px;height: 50px;float: right;">
-      <input id="an" type="button"  @click="startApp" style="width: 50px;height: 30px;margin-top: 10px" value="按钮"></input>
+
+    <div id="tests">
+
+      <div style="height: 50px;float:left;">
+
+        <div style="height: 50px;float:left;width: 100px">
+          zd:
+        </div>
+        <div style="height: 50px;float:left;width: 100px">
+          <input type="text"/>
+        </div>
+        <div style="height: 50px;float:left;width: 100px">
+          <input type="button" value="按钮"/>
+        </div>
+        <div style="height: 50px;float:left;width: 100px">
+          zd:
+        </div>
+
+      </div>
+
+      <div style="height: 50px">bbbbb</div>
+      <div style="height: 50px">ccccc</div>
+      <div style="height: 50px">ddddd</div>
     </div>
 
   </div>
@@ -83,6 +129,20 @@
       this.queryCount();
     },
     methods:{
+      //传送
+      transmit(){
+
+        this.$alert('这是一段内容', '标题名称', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
+
+      },
       queryCount(){
         const userName = localStorage.getItem("token_wx");
         //初始化页面查询数据
@@ -160,24 +220,33 @@
         const san_div = document.getElementById('san_id');
         const er_div = document.getElementById('er_id');
 
+        const er_id_cs = document.getElementById('er_id_cs');
+        const san_id_cs = document.getElementById('san_id_cs');
+        const si_id_cs = document.getElementById('si_id_cs');
+        const wu_id_cs = document.getElementById('wu_id_cs');
+
         //将边框都重置白色
         wu_div.style.border="1px solid #e5e6d8"
         si_div.style.border="1px solid #e5e6d8"
         san_div.style.border="1px solid #e5e6d8"
         er_div.style.border="1px solid #e5e6d8"
 
-        //设置选中后的值底色，并设置数据
+        //设置选中后的值底色
         if(this.testNum - 2=== 0){
           er_div.style.border="1px solid #e8fa21"
+          er_id_cs.style.display="block";
         }
         if(this.testNum - 3=== 0){
           san_div.style.border="1px solid #e8fa21"
+          san_id_cs.style.display="block";
         }
         if(this.testNum - 4=== 0){
           si_div.style.border="1px solid #e8fa21"
+          si_id_cs.style.display="block";
         }
         if(this.testNum - 5=== 0){
           wu_div.style.border="1px solid #e8fa21"
+          wu_id_cs.style.display="block";
         }
         //设置按钮取消置灰
         document.getElementById('an').removeAttribute("disabled");
@@ -192,7 +261,7 @@
   .cj {
     background-color: #1a1919;
     width: 500px;
-    height: 400px;
+    height: 500px;
   }
   .bt {
     background-color: #05070c;
