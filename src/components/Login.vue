@@ -56,6 +56,16 @@ export default {
       repData: {},
     }
   },
+  //该声明周期可以操作dom
+  mounted() {
+    if(this.$api.getAllLocal().token_wx){
+      const login = document.getElementById("login");
+      const elForm = document.getElementById("elForm");
+      login.style.display = "block";
+      elForm.style.display = "none";
+      this.formData.userName = this.$api.getAllLocal().token_wx;
+    }
+  },
   methods: {
     onLogin(){
       this.$axios.post('http://localhost:9001/wuxing/login',this.formData).then(response => (
@@ -72,6 +82,7 @@ export default {
         const elForm = document.getElementById("elForm");
         login.style.display = "block";
         elForm.style.display = "none";
+        this.$api.setLocal(response.token)
       }
     },
     onSubmit(){

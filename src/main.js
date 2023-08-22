@@ -12,6 +12,22 @@ Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.prototype.$api = common
 /* eslint-disable no-new */
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireAuth)){  // 判断该路由是否需要登录权限
+    if(!localStorage.getItem('token')){
+      next({
+        path: '/',
+        //query: {redirect: to.fullPath}  // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
+    }else{
+      next();
+    }
+  }else {
+    next();
+  }
+})
+
 new Vue({
   el: '#app',
   router,
