@@ -14,12 +14,13 @@
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题5</div>
       </div>
-      <div style="width: 152px;float:left;">
+      <div style="width: 94px;float:left;text-align: right;">
         <div style="margin-top: 15px;">标题5</div>
       </div>
-      <div id="wu_id_cs" style="width: 40px;float:left;display: none">
-        <div style="margin-top: 15px;">
-          <a style="color: azure" href="#" @click="transmit">标题</a>
+      <div id="wu_id_cs" style="width: 99px;float:left;display: none;">
+        <div style="margin-top: 7px;">
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,5)">标题标提</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,5)">标题标提</a>
         </div>
       </div>
     </div>
@@ -31,12 +32,13 @@
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题4</div>
       </div>
-      <div style="width: 152px;float:left;">
+      <div style="width: 94px;float:left;text-align: right;">
         <div style="margin-top: 15px;">标题4</div>
       </div>
-      <div id="si_id_cs" style="width: 40px;float:left;display: none">
-        <div style="margin-top: 15px;">
-          <a style="color: azure" href="#" @click="transmit">标题</a>
+      <div id="si_id_cs" style="width: 99px;float:left;display: none;">
+        <div style="margin-top: 7px;">
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,4)">标题标提</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,4)">标题标提</a>
         </div>
       </div>
     </div>
@@ -48,12 +50,13 @@
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题3</div>
       </div>
-      <div style="width: 152px;float:left;">
+      <div style="width: 94px;float:left;text-align: right;">
         <div style="margin-top: 15px;">标题3</div>
       </div>
-      <div  id="san_id_cs" style="width: 40px;float:left;display: none">
-        <div style="margin-top: 15px;">
-          <a style="color: azure" href="#" @click="transmit">标题</a>
+      <div id="san_id_cs" style="width: 99px;float:left;display: none;">
+        <div style="margin-top: 7px;">
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,3)">标题标提</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,3)">标题标提</a>
         </div>
       </div>
     </div>
@@ -65,12 +68,13 @@
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题2</div>
       </div>
-      <div style="width: 152px;float:left;">
+      <div style="width: 94px;float:left;text-align: right;">
         <div style="margin-top: 15px;">标题2</div>
       </div>
-      <div id="er_id_cs" style="width: 40px;float:left;display: none">
-        <div style="margin-top: 15px;">
-          <a style="color: azure" href="#" @click="transmit">标题</a>
+      <div id="er_id_cs" style="width: 99px;float:left;display: none;">
+        <div style="margin-top: 7px;">
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,2)">标题标提</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,2)">标题标提</a>
         </div>
       </div>
     </div>
@@ -88,7 +92,6 @@
     </div>
 
     <div>
-
       <div style="height: 50px;float:left;">
         <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
           测试AA: {{ this.userData.zdjNum }}
@@ -103,8 +106,8 @@
           测试
         </div>
       </div>
-
     </div>
+
 
   </div>
 </template>
@@ -127,7 +130,24 @@
     },
     methods:{
       //传送
-      transmit(){},
+      transmit(a,b){
+        this.$axios.post('http://localhost:9001/wuxing/hulu',{"aType":a,"bType":b,"userName":this.$api.getLocal()}).then(response => (
+          this.transmitRep(response.data)
+        )).catch(error => (
+          console.log(error)
+        ))
+      },
+      transmitRep(data){
+        if(data.code === 200){
+          this.$message({
+            message: data.msg,
+            type: 'success'
+          })
+        }else{
+          this.$message.error(data.msg);
+        }
+        this.queryCount();
+      },
       //chu
       sell(type){
         const num = document.getElementById("sellValueId").value;
@@ -150,6 +170,7 @@
         this.queryCount();
       },
       queryCount(){
+
         const userName = localStorage.getItem("token_wx");
         //初始化页面查询数据
         this.$axios.post('http://localhost:9001/wuxing/data',{"userName":userName}).then(response => (
@@ -157,6 +178,26 @@
         )).catch(error => (
           console.log(error)
         ))
+
+        //将边框都重置白色
+        const wu_div = document.getElementById('wu_id');
+        const si_div = document.getElementById('si_id');
+        const san_div = document.getElementById('san_id');
+        const er_div = document.getElementById('er_id');
+        wu_div.style.border="1px solid #e5e6d8"
+        si_div.style.border="1px solid #e5e6d8"
+        san_div.style.border="1px solid #e5e6d8"
+        er_div.style.border="1px solid #e5e6d8"
+
+        //将传送隐藏
+        const er_id_cs = document.getElementById('er_id_cs');
+        const san_id_cs = document.getElementById('san_id_cs');
+        const si_id_cs = document.getElementById('si_id_cs');
+        const wu_id_cs = document.getElementById('wu_id_cs');
+        er_id_cs.style.display="none";
+        san_id_cs.style.display="none";
+        si_id_cs.style.display="none";
+        wu_id_cs.style.display="none";
       },
       obtain(){
         const userName = localStorage.getItem("token_wx");
@@ -196,7 +237,6 @@
         if(this.num - 5=== 0){
           wu_div.style.border="1px solid #e8fa21"
         }
-
       },
 
       //开启定时
@@ -213,7 +253,7 @@
           this.yanShi()
         }, 500)
         //调用后端获取数据
-        this.$axios.get('http://localhost:9001/wuxing/test').then(response => (
+        this.$axios.post('http://localhost:9001/wuxing/count',{"page":1,"userName":localStorage.getItem("token_wx")}).then(response => (
           this.testNum = response.data
         )).catch(error => (
           console.log(error)
