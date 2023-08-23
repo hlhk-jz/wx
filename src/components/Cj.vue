@@ -126,7 +126,7 @@
       }
     },
     created(){
-      this.queryCount();
+      this.queryCount(true);
     },
     methods:{
       //传送
@@ -169,8 +169,7 @@
         })
         this.queryCount();
       },
-      queryCount(){
-
+      queryCount(isTrue){
         const userName = localStorage.getItem("token_wx");
         //初始化页面查询数据
         this.$axios.post('http://localhost:9001/wuxing/data',{"userName":userName}).then(response => (
@@ -179,25 +178,27 @@
           console.log(error)
         ))
 
-        //将边框都重置白色
-        const wu_div = document.getElementById('wu_id');
-        const si_div = document.getElementById('si_id');
-        const san_div = document.getElementById('san_id');
-        const er_div = document.getElementById('er_id');
-        wu_div.style.border="1px solid #e5e6d8"
-        si_div.style.border="1px solid #e5e6d8"
-        san_div.style.border="1px solid #e5e6d8"
-        er_div.style.border="1px solid #e5e6d8"
+        if(!isTrue){
+          //将边框都重置白色
+          const wu_div = document.getElementById('wu_id');
+          const si_div = document.getElementById('si_id');
+          const san_div = document.getElementById('san_id');
+          const er_div = document.getElementById('er_id');
+          wu_div.style.border="1px solid #e5e6d8"
+          si_div.style.border="1px solid #e5e6d8"
+          san_div.style.border="1px solid #e5e6d8"
+          er_div.style.border="1px solid #e5e6d8"
 
-        //将传送隐藏
-        const er_id_cs = document.getElementById('er_id_cs');
-        const san_id_cs = document.getElementById('san_id_cs');
-        const si_id_cs = document.getElementById('si_id_cs');
-        const wu_id_cs = document.getElementById('wu_id_cs');
-        er_id_cs.style.display="none";
-        san_id_cs.style.display="none";
-        si_id_cs.style.display="none";
-        wu_id_cs.style.display="none";
+          //将传送隐藏
+          const er_id_cs = document.getElementById('er_id_cs');
+          const san_id_cs = document.getElementById('san_id_cs');
+          const si_id_cs = document.getElementById('si_id_cs');
+          const wu_id_cs = document.getElementById('wu_id_cs');
+          er_id_cs.style.display="none";
+          san_id_cs.style.display="none";
+          si_id_cs.style.display="none";
+          wu_id_cs.style.display="none";
+        }
       },
       obtain(){
         const userName = localStorage.getItem("token_wx");
