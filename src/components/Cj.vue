@@ -9,7 +9,7 @@
 
     <div class="wu" id="wu_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题5</div>
+        <div style="margin-top: 15px;">标题</div>
       </div>
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题5</div>
@@ -26,7 +26,7 @@
 
     <div class="si" id="si_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题4</div>
+        <div style="margin-top: 15px;">标题</div>
       </div>
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题4</div>
@@ -43,7 +43,7 @@
 
     <div class="san" id="san_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题3</div>
+        <div style="margin-top: 15px;">标题</div>
       </div>
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题3</div>
@@ -60,7 +60,7 @@
 
     <div class="er" id="er_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题2</div>
+        <div style="margin-top: 15px;">标题</div>
       </div>
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题2</div>
@@ -77,7 +77,7 @@
 
     <div id="zon" style="height: 50px">
       <div style="width: 250px;height: 50px;float: left;">
-        <p>备注：{{ count }} </p>
+        <p>备注：{{ this.userData.num }} </p>
       </div>
       <div style="width: 155px;height: 50px;float: left;">
         <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
@@ -87,28 +87,23 @@
       </div>
     </div>
 
-    <div id="tests">
+    <div>
 
       <div style="height: 50px;float:left;">
-
-        <div style="height: 50px;float:left;width: 100px">
-          zd:
+        <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+          测试AA: {{ this.userData.zdjNum }}
         </div>
-        <div style="height: 50px;float:left;width: 100px">
-          <input type="text"/>
+        <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+           数量：<input style="width:50px" type="number" id="sellValueId"/>
         </div>
-        <div style="height: 50px;float:left;width: 100px">
-          <input type="button" value="按钮"/>
+        <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+          <input type="button" @click="sell(5)" value="出售"/>
         </div>
-        <div style="height: 50px;float:left;width: 100px">
-          zd:
+        <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+          测试
         </div>
-
       </div>
 
-      <div style="height: 50px">bbbbb</div>
-      <div style="height: 50px">ccccc</div>
-      <div style="height: 50px">ddddd</div>
     </div>
 
   </div>
@@ -122,7 +117,9 @@
         num: 0,
         id: null,
         testNum: 0,
-        count: 0
+        userData: {
+          num: 0,zdjNum: 0
+        }
       }
     },
     created(){
@@ -130,24 +127,33 @@
     },
     methods:{
       //传送
-      transmit(){
-
-        this.$alert('这是一段内容', '标题名称', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            });
-          }
-        });
-
+      transmit(){},
+      //chu
+      sell(type){
+        const num = document.getElementById("sellValueId").value;
+        if(num === "" || parseInt(num) <= 0 || parseInt(num) > this.userData.zdjNum ){
+          this.$message.error('填写有误');
+          return;
+        }
+        const use = {"type":type,"userName":this.$api.getLocal(),"sellNum":num}
+        this.$axios.post('http://localhost:9001/wuxing/sell',use).then(response => (
+         this.sellRep(response)
+        )).catch(error => (
+          console.log(error)
+        ))
+      },
+      sellRep(response){
+        this.$message({
+            message: response.data.currData,
+            type: 'success'
+        })
+        this.queryCount();
       },
       queryCount(){
         const userName = localStorage.getItem("token_wx");
         //初始化页面查询数据
-        this.$axios.post('http://localhost:9001/wuxing/count',{"userName":userName}).then(response => (
-          this.count = response.data
+        this.$axios.post('http://localhost:9001/wuxing/data',{"userName":userName}).then(response => (
+          this.userData = response.data
         )).catch(error => (
           console.log(error)
         ))
@@ -195,8 +201,12 @@
 
       //开启定时
       startApp(){
-        let num = Number(this.count);
-        this.count = num - 2000000;
+        if(parseInt(this.userData.num) < 2000000 ){
+          this.$message.error('数量不足');
+           return;
+        }
+        let num = Number(this.userData.num);
+        this.userData.num = num - 2000000;
         document.getElementById('an').disabled="true";
         //设置500毫秒调用一次，一直循环
         this.id = setInterval(() => {

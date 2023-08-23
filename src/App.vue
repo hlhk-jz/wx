@@ -2,9 +2,9 @@
   <div id="app">
     <div id="app1">
       <router-link :to="{name:'Login'}"  style="float:left;" >首页</router-link>
-      <router-link :to="{name:'Cj'}" style="float:left; margin-left: 10px;">测试</router-link>
-      <router-link :to="{name:'Zj'}"style="float:left; margin-left: 10px;">测试</router-link>
-      <router-link :to="{name:'Gj'}"style="float:left; margin-left: 10px;">测试</router-link>
+      <router-link :to="{name:'Cj'}" style="float:left; margin-left: 10px;">初级</router-link>
+      <router-link :to="{name:'Zj'}"style="float:left; margin-left: 10px;">中级</router-link>
+      <router-link :to="{name:'Gj'}"style="float:left; margin-left: 10px;">高级</router-link>
       <a href="#" @click="out" style="color: #8cbd74">退出</a>
       <div id="app2">
         <router-view/>
