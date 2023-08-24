@@ -84,7 +84,7 @@
         <p>备注：{{ this.userData.num }} </p>
       </div>
       <div style="width: 155px;height: 50px;float: left;">
-        <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+        <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" disabled="true" value="预留"></input>
       </div>
       <div style="width: 50px;height: 50px;float: left;">
         <input id="an" type="button"  @click="startApp" style="width: 50px;height: 30px;margin-top: 10px" value="开始"></input>

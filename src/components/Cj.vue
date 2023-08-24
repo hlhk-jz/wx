@@ -84,7 +84,7 @@
         <p>备注：{{ this.userData.num }} </p>
       </div>
       <div style="width: 155px;height: 50px;float: left;">
-        <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" value="重置"></input>
+        <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" disabled="true" value="预留"></input>
       </div>
       <div style="width: 50px;height: 50px;float: left;">
         <input id="an" type="button"  @click="startApp" style="width: 50px;height: 30px;margin-top: 10px" value="开始"></input>
@@ -287,7 +287,8 @@
           num: 0,
           zdjNum: 0,zdNum: 0,zjNum: 0,jfzNum: 0,bfzNum: 0,cfzNum: 0,
           fp1NUm: 0,fp2Num: 0,fp3Num: 0,hzzNum: 0,yzzNum: 0,bzzNum: 0,
-        }
+        },
+        isTrue: false
       }
     },
     created(){
@@ -337,7 +338,7 @@
         this.queryCount();
       },
       queryCount(isTrue){
-        const userName = localStorage.getItem("token_wx");
+        const userName = localStorage.getItem("token_wx").split("-")[0];
         //初始化页面查询数据
         this.$axios.post('http://localhost:9001/wuxing/data',{"userName":userName}).then(response => (
           this.userData = response.data
@@ -428,7 +429,6 @@
         ))
         setTimeout(this.stop, 4000 )
       },
-
       //停止定时,设置选中后的颜色
       stop(){
         clearInterval(this.id)

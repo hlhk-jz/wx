@@ -1,15 +1,15 @@
 //公共方法
 function setLocal(token){
-  localStorage.setItem("token_wx",token)
+  sessionStorage.setItem("token_wx",token)
 }
 function getLocal(){
-  return localStorage.getItem("token_wx")
+  return sessionStorage.getItem("token_wx")
 }
 function getAllLocal () {
-  return localStorage.valueOf();//取出所有的值
+  return sessionStorage.valueOf();//取出所有的值
 }
 function clear () {
-  localStorage.clear();
+  sessionStorage.clear();
 }
 //抛出 定义的方法
 export default {

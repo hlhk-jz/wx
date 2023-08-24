@@ -75,7 +75,7 @@ export default {
         });
     },
     login(response){
-      if(response.code != 200){
+      if(response.code == 501){
         document.getElementById("msg").innerText="用户名或密码错误！"
       }else{
         const login = document.getElementById("login");
