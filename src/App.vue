@@ -33,7 +33,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background-color: #535a59;
-  height: 900px;
+  height: 955px;
 }
  #app1 {
   padding: 10px 0;

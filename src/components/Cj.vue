@@ -19,8 +19,8 @@
       </div>
       <div id="wu_id_cs" style="width: 99px;float:left;display: none;">
         <div style="margin-top: 7px;">
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,5)">标题标提</a><br>
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,5)">标题标提</a>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,12)">标题标提</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,12)">标题标提</a>
         </div>
       </div>
     </div>
@@ -91,20 +91,186 @@
       </div>
     </div>
 
-    <div>
-      <div style="height: 50px;float:left;">
-        <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-          测试AA: {{ this.userData.zdjNum }}
-        </div>
-        <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
-           数量：<input style="width:50px" type="number" id="sellValueId"/>
-        </div>
-        <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
-          <input type="button" @click="sell(5)" value="出售"/>
-        </div>
-        <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
-          测试
-        </div>
+    <!--!!!!!!!!!!!!!!!!!下方区域!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        12试测: {{ this.userData.zdjNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id12"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(12,userData.zdjNum,'id12')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        11试测: {{ this.userData.zdNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id11"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(11,userData.zdNum,'id11')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        10试测: {{ this.userData.zjNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id10"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(10,userData.zjNum,'id10')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        9测试测: {{ this.userData.jfzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id9"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(9,userData.jfzNum,'id9')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        8测试测: {{ this.userData.bfzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id8"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(8,userData.bfzNum,'id8')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        7测试测: {{ this.userData.cfzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id7"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(7,userData.cfzNum,'id7')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        6测试测: {{ this.userData.fp1NUm }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id6"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(6,userData.fp1NUm,'id6')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        5测试测: {{ this.userData.fp2Num }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id5"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(5,userData.fp2Num,'id5')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        4测试测: {{ this.userData.fp3Num }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id4"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(4,userData.fp3Num,'id4')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        3测试测: {{ this.userData.hzzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id3"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(3,userData.hzzNum,'id3')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        2测试测: {{ this.userData.yzzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id2"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(2,userData.yzzNum,'id2')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+        可获得
+      </div>
+    </div>
+
+    <div style="height: 50px;float:left;">
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
+        1测试测: {{ this.userData.bzzNum }}
+      </div>
+      <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
+        数量：<input style="width:50px" type="number" id="id1"/>
+      </div>
+      <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
+        <input type="button" @click="sell(1,userData.bzzNum,'id1')" value="出售"/>
+      </div>
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: darkgreen;">
+        可获得：10W-60W
       </div>
     </div>
 
@@ -121,7 +287,9 @@
         id: null,
         testNum: 0,
         userData: {
-          num: 0,zdjNum: 0
+          num: 0,
+          zdjNum: 0,zdNum: 0,zjNum: 0,jfzNum: 0,bfzNum: 0,cfzNum: 0,
+          fp1NUm: 0,fp2Num: 0,fp3Num: 0,hzzNum: 0,yzzNum: 0,bzzNum: 0,
         }
       }
     },
@@ -149,9 +317,9 @@
         this.queryCount();
       },
       //chu
-      sell(type){
-        const num = document.getElementById("sellValueId").value;
-        if(num === "" || parseInt(num) <= 0 || parseInt(num) > this.userData.zdjNum ){
+      sell(type,zNum,id){
+        const num = document.getElementById(id).value;
+        if(num === "" || parseInt(num) <= 0 || parseInt(num) > zNum ){
           this.$message.error('填写有误');
           return;
         }
@@ -164,7 +332,7 @@
       },
       sellRep(response){
         this.$message({
-            message: response.data.currData,
+            message: response.data.msg,
             type: 'success'
         })
         this.queryCount();
@@ -312,7 +480,7 @@
   .cj {
     background-color: #1a1919;
     width: 500px;
-    height: 500px;
+    height: 890px;
   }
   .bt {
     background-color: #05070c;
