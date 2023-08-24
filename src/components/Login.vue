@@ -63,7 +63,7 @@ export default {
       const elForm = document.getElementById("elForm");
       login.style.display = "block";
       elForm.style.display = "none";
-      this.formData.userName = this.$api.getAllLocal().token_wx;
+      this.formData.userName = this.$api.getAllLocal().token_wx.split("-")[0];
     }
   },
   methods: {

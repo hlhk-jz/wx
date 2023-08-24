@@ -103,7 +103,7 @@
         <input type="button" @click="sell(1,userData.bzzNum,'id1')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: darkgreen;">
-        可获得：10W-60W
+        可获得：
       </div>
     </div>
 
