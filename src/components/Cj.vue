@@ -1,11 +1,11 @@
 <template>
   <div class="cj">
 
-      <div class="bt" style="background-color: #2d2a32;">
-         <div style="width: 151px;float:left; margin-top: 5px" >星级</div>
-         <div style="width: 151px;float:left; margin-top: 5px" >目标</div>
-         <div style="width: 151px;float:left; margin-top: 5px" >价值</div>
-      </div>
+    <div class="bt" style="background-color: #2d2a32;">
+      <div style="width: 151px;float:left; margin-top: 5px;color: #7793af; font-weight: bold;" >星级</div>
+      <div style="width: 151px;float:left; margin-top: 5px;color: #7793af; font-weight: bold;" >目标</div>
+      <div style="width: 151px;float:left; margin-top: 5px;color: #7793af; font-weight: bold;" >价值</div>
+    </div>
 
     <div class="wu" id="wu_id">
       <div style="width: 152px;float:left;">
@@ -15,73 +15,73 @@
         <div style="margin-top: 15px;">拍卖师</div>
       </div>
       <div style="width: 94px;float:left;text-align: right;">
-        <div style="margin-top: 15px;">测试标题</div>
+        <div style="margin-top: 15px;">约4000万文</div>
       </div>
       <div id="wu_id_cs" style="width: 99px;float:left;display: none;">
         <div style="margin-top: 7px;">
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,10)">标题标提</a><br>
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,10)">标题标提</a>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,10)">收下葫芦</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,10)">收下珍玩</a>
         </div>
       </div>
     </div>
 
     <div class="si" id="si_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题</div>
+        <div style="margin-top: 15px;">★★★★</div>
       </div>
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题4</div>
+        <div style="margin-top: 15px;">贾仁河</div>
       </div>
       <div style="width: 94px;float:left;text-align: right;">
-        <div style="margin-top: 15px;">标题4</div>
+        <div style="margin-top: 15px;">约800万文</div>
       </div>
       <div id="si_id_cs" style="width: 99px;float:left;display: none;">
         <div style="margin-top: 7px;">
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,7)">标题标提</a><br>
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,7)">标题标提</a>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,7)">收下葫芦</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,7)">收下珍玩</a>
         </div>
       </div>
     </div>
 
     <div class="san" id="san_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题</div>
+        <div style="margin-top: 15px;">★★★</div>
       </div>
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题3</div>
+        <div style="margin-top: 15px;">白发老人</div>
       </div>
       <div style="width: 94px;float:left;text-align: right;">
-        <div style="margin-top: 15px;">标题3</div>
+        <div style="margin-top: 15px;">约300万文</div>
       </div>
       <div id="san_id_cs" style="width: 99px;float:left;display: none;">
         <div style="margin-top: 7px;">
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,4)">标题标提</a><br>
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,4)">标题标提</a>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,4)">收下葫芦</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,4)">收下珍玩</a>
         </div>
       </div>
     </div>
 
     <div class="er" id="er_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题</div>
+        <div style="margin-top: 15px;">★★</div>
       </div>
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题2</div>
+        <div style="margin-top: 15px;">神算子</div>
       </div>
       <div style="width: 94px;float:left;text-align: right;">
-        <div style="margin-top: 15px;">标题2</div>
+        <div style="margin-top: 15px;">约50万文</div>
       </div>
       <div id="er_id_cs" style="width: 99px;float:left;display: none;">
         <div style="margin-top: 7px;">
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,1)">标题标提</a><br>
-          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,1)">标题标提</a>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(1,1)">收下葫芦</a><br>
+          <a style="color: azure;font-size: 13px;" href="#" @click="transmit(2,1)">收下珍玩</a>
         </div>
       </div>
     </div>
 
     <div id="zon" style="height: 50px">
       <div style="width: 250px;height: 50px;float: left;">
-        <p>备注：{{ this.userData.num }} </p>
+        <p style="color: #709b9b;">当前：{{ this.userData.num }} 文</p>
       </div>
       <div style="width: 155px;height: 50px;float: left;">
         <input type="button" @click="obtain" style="width: 50px;height: 30px;margin-top: 10px" disabled="true" value="预留"></input>
@@ -93,8 +93,8 @@
 
     <!--!!!!!!!!!!!!!!!!!下方区域!!!!!!!!!!!!!!!!!!!!!!!!!!-->
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        1测试测: {{ this.userData.bzzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: darkgreen;">
+        白珍珠: {{ this.userData.bzzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id1"/>
@@ -103,13 +103,13 @@
         <input type="button" @click="sell(1,userData.bzzNum,'id1')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: darkgreen;">
-        可获得：
+        可获得：约50万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        2测试测: {{ this.userData.yzzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(56 53 149);">
+        云珍珠: {{ this.userData.yzzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id2"/>
@@ -118,13 +118,13 @@
         <input type="button" @click="sell(2,userData.yzzNum,'id2')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(56 53 149);">
-        可获得
+        可获得: 约500万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        3测试测: {{ this.userData.hzzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(61 126 112);">
+        虹珍珠: {{ this.userData.hzzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id3"/>
@@ -133,13 +133,13 @@
         <input type="button" @click="sell(3,userData.hzzNum,'id3')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(61 126 112);">
-        可获得
+        可获得: 约1000万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        4测试测: {{ this.userData.fp3Num }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(167 120 70);">
+        白盘: {{ this.userData.fp3Num }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id4"/>
@@ -148,13 +148,13 @@
         <input type="button" @click="sell(4,userData.fp3Num,'id4')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(167 120 70);">
-        可获得
+        可获得: 约300万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        5测试测: {{ this.userData.fp2Num }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: #1d5289;">
+        玉盘: {{ this.userData.fp2Num }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id5"/>
@@ -163,13 +163,13 @@
         <input type="button" @click="sell(5,userData.fp2Num,'id5')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #1d5289;">
-        可获得
+        可获得: 约1000万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        6测试测: {{ this.userData.fp1NUm }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: #6e3535;">
+        云盘: {{ this.userData.fp1NUm }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id6"/>
@@ -178,13 +178,13 @@
         <input type="button" @click="sell(6,userData.fp1NUm,'id6')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #6e3535;">
-        可获得
+        可获得: 约1亿文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        7测试测: {{ this.userData.cfzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(142 60 143);">
+        白凤樽: {{ this.userData.cfzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id7"/>
@@ -193,13 +193,13 @@
         <input type="button" @click="sell(7,userData.cfzNum,'id7')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(142 60 143);">
-        可获得
+        可获得：约800万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        8测试测: {{ this.userData.bfzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(107 62 135);">
+        云凤樽: {{ this.userData.bfzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id8"/>
@@ -208,13 +208,13 @@
         <input type="button" @click="sell(8,userData.bfzNum,'id8')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(107 62 135);">
-        可获得
+        可获得: 约8000万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        9测试测: {{ this.userData.jfzNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: #3067a1;">
+        金凤樽: {{ this.userData.jfzNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id9"/>
@@ -223,13 +223,13 @@
         <input type="button" @click="sell(9,userData.jfzNum,'id9')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #3067a1;">
-        可获得
+        可获得: 约4亿文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        10试测: {{ this.userData.zjNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: #4f9f27;">
+        紫晶: {{ this.userData.zjNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id10"/>
@@ -238,13 +238,13 @@
         <input type="button" @click="sell(10,userData.zjNum,'id10')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #4f9f27;">
-        可获得
+        可获得: 约4000万文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        11试测: {{ this.userData.zdNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: #f1b505;">
+        紫帝: {{ this.userData.zdNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id11"/>
@@ -252,14 +252,14 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(11,userData.zdNum,'id11')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(31 241 243);">
-        可获得
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #f1b505;">
+        可获得: 约4亿文
       </div>
     </div>
 
     <div style="height: 50px;float:left;">
-      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;">
-        12试测: {{ this.userData.zdjNum }}
+      <div style="height: 50px;float:left;width: 80px;margin-top: 6px;text-align: left;margin-left: 10px;color: rgb(31 241 243);">
+        紫帝晶: {{ this.userData.zdjNum }}
       </div>
       <div style="height: 50px;float:left;width: 130px;margin-top: 6px;">
         数量：<input style="width:50px" type="number" id="id12"/>
@@ -267,8 +267,8 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(12,userData.zdjNum,'id12')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #f1b505;">
-        可获得
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(31 241 243);">
+        可获得: 20亿文
       </div>
     </div>
 
