@@ -34,23 +34,17 @@ axios.interceptors.request.use(config=>{
   return config;
 })
 
-//全局响应拦截器（处理后端返回的错误码）
-/*axios.interceptors.response.use(
-  re=>{
-    return re
-  },
-  err=>{
-    if(err.response.status===401){
-      return Promise.reject("没有登录")
-    }
-    if(err.response.status===520){
-      //跳转到login页面
-      router.push("/Login")
-      alert("您的账号在别处登录！")
-    }
-    return Promise.reject("服务器异常")
-  }
-)*/
+//响应拦截器
+axios.interceptors.response.use(response => {
+   return response;
+}, error => {
+  sessionStorage.clear();
+  router.push("/")
+  Vue.prototype.$message({
+    message: '登录异常需重新登录',
+    type: 'error'
+  });
+});
 
 new Vue({
   el: '#app',
