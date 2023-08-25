@@ -1,15 +1,15 @@
 <template>
   <div class="gj">
 
-    <div class="bt">
-      <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
-      <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
-      <div style="width: 151px;float:left; margin-top: 5px" >标题</div>
+    <div class="bt" style="background-color: #2d2a32;">
+      <div style="width: 151px;float:left; margin-top: 5px" >星级</div>
+      <div style="width: 151px;float:left; margin-top: 5px" >目标</div>
+      <div style="width: 151px;float:left; margin-top: 5px" >价值</div>
     </div>
 
     <div class="wu" id="wu_id">
       <div style="width: 152px;float:left;">
-        <div style="margin-top: 15px;">标题</div>
+        <div style="margin-top: 15px;">★</div>
       </div>
       <div style="width: 152px;float:left;">
         <div style="margin-top: 15px;">标题5</div>
@@ -103,7 +103,7 @@
         <input type="button" @click="sell(1,userData.bzzNum,'id1')" value="出售"/>
       </div>
       <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: darkgreen;">
-        可获得：10W-60W
+        可获得：
       </div>
     </div>
 
@@ -117,7 +117,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(2,userData.yzzNum,'id2')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(56 53 149);">
         可获得
       </div>
     </div>
@@ -132,7 +132,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(3,userData.hzzNum,'id3')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(61 126 112);">
         可获得
       </div>
     </div>
@@ -147,7 +147,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(4,userData.fp3Num,'id4')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(167 120 70);">
         可获得
       </div>
     </div>
@@ -162,7 +162,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(5,userData.fp2Num,'id5')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #1d5289;">
         可获得
       </div>
     </div>
@@ -177,7 +177,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(6,userData.fp1NUm,'id6')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #6e3535;">
         可获得
       </div>
     </div>
@@ -192,7 +192,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(7,userData.cfzNum,'id7')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(142 60 143);">
         可获得
       </div>
     </div>
@@ -207,7 +207,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(8,userData.bfzNum,'id8')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(107 62 135);">
         可获得
       </div>
     </div>
@@ -222,7 +222,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(9,userData.jfzNum,'id9')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #3067a1;">
         可获得
       </div>
     </div>
@@ -237,7 +237,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(10,userData.zjNum,'id10')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #4f9f27;">
         可获得
       </div>
     </div>
@@ -252,7 +252,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(11,userData.zdNum,'id11')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: rgb(31 241 243);">
         可获得
       </div>
     </div>
@@ -267,7 +267,7 @@
       <div style="height: 50px;float:left;width: 50px;margin-top: 7px;">
         <input type="button" @click="sell(12,userData.zdjNum,'id12')" value="出售"/>
       </div>
-      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #e78f31;">
+      <div style="height: 50px;float:left;width: 200px;margin-top: 7px;text-align: left;color: #f1b505;">
         可获得
       </div>
     </div>
@@ -296,7 +296,7 @@
     methods:{
       //传送
       transmit(a,b){
-        this.$axios.post('http://localhost:9001/wuxing/hulu',{"aType":a,"bType":b,"userName":this.$api.getLocal()}).then(response => (
+        this.$axios.post('http://localhost:9001/wuxing/hulu',{"aType":a,"bType":b,"userName":this.$api.getUserName()}).then(response => (
           this.transmitRep(response.data)
         )).catch(error => (
           console.log(error)
@@ -322,7 +322,7 @@
           this.$message.error('填写有误');
           return;
         }
-        const use = {"type":type,"userName":this.$api.getLocal(),"sellNum":num}
+        const use = {"type":type,"userName":this.$api.getUserName(),"sellNum":num}
         this.$axios.post('http://localhost:9001/wuxing/sell',use).then(response => (
           this.sellRep(response)
         )).catch(error => (
@@ -337,7 +337,7 @@
         this.queryCount();
       },
       queryCount(isTrue){
-        const userName = localStorage.getItem("token_wx");
+        const userName = sessionStorage.getItem("wx_userName");
         //初始化页面查询数据
         this.$axios.post('http://localhost:9001/wuxing/data',{"userName":userName}).then(response => (
           this.userData = response.data
@@ -368,7 +368,7 @@
         }
       },
       obtain(){
-        const userName = localStorage.getItem("token_wx");
+        const userName = sessionStorage.getItem("wx_userName");
         this.$axios.post('http://localhost:9001/wuxing/obtain',{"userName":userName}).then(response => (
           this.queryCount()
         )).catch(error => (
@@ -421,7 +421,7 @@
           this.yanShi()
         }, 500)
         //调用后端获取数据
-        this.$axios.post('http://localhost:9001/wuxing/count',{"page":3,"userName":localStorage.getItem("token_wx")}).then(response => (
+        this.$axios.post('http://localhost:9001/wuxing/count',{"page":3,"userName":sessionStorage.getItem("wx_userName")}).then(response => (
           this.testNum = response.data
         )).catch(error => (
           console.log(error)

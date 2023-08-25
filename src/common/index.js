@@ -11,10 +11,14 @@ function getAllLocal () {
 function clear () {
   sessionStorage.clear();
 }
+function getUserName () {
+  return sessionStorage.getItem("wx_userName")
+}
 //抛出 定义的方法
 export default {
   setLocal,
   clear,
   getLocal,
-  getAllLocal
+  getAllLocal,
+  getUserName,
 }
